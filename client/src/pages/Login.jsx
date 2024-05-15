@@ -1,25 +1,28 @@
 import { useState } from 'react';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 export default function Login() {
-  /* Data is initialized to empty strings since form is not filled out until User enters information */
+  // Initialize state for form data with empty strings
   const [data, setData] = useState({
     email: '',
     password: '',
-  })
+  });
 
+  // Function to handle login form submission
   const loginUser = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault(); // Prevent default form submission behavior
+    axios.get('/'); // GET request to '/'
+  };
   
   return (
     <div>
       <form>
-        <label onSubmit={loginUser}>Email</label>
-        <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} /> 
+        <label onSubmit={loginUser}>Email</label> {/* Form submission handler */}
+        <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />  {/* Input field for email with onChange event to update state */}
         <label>Password</label>
-        <input type="password" placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />        
-        <button type="submit">Submit</button>
+        <input type="password" placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} /> {/* Input field for password with onChange event to update state */}
+        <button type="submit">Submit</button> {/* Submit button */}
       </form>
     </div>
-  )
+  );
 }
