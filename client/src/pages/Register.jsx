@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
 export default function Register() {
-  
+    // Initialize state and form data
     const [data, setData] = useState({
     name: '',
     email: '',
     password: '',
-  })
+  });
 
+  // Function to handle registration form submission
   const registerUser = (e) => {
     a.preventDefault()
   }
@@ -21,8 +22,8 @@ export default function Register() {
         <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} /> 
         <label>Password</label>
         <input type="password" placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />         
-        <button type="submit">Submit</button>
+        <button type="submit">Register</button>
       </form>
     </div>
-  )
+  );
 }

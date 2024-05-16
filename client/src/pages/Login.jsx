@@ -21,7 +21,7 @@ export default function Login() {
         <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />  {/* Input field for email with onChange event to update state */}
         <label>Password</label>
         <input type="password" placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} /> {/* Input field for password with onChange event to update state */}
-        <button type="submit">Submit</button> {/* Submit button */}
+        <button type="submit">Login</button> {/* Submit button */}
       </form>
     </div>
   );

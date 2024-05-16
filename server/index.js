@@ -2,9 +2,15 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 
-const app = express() /* Initialize Express */
 
-app.use('/', require('./routes/authRoutes'))
+// Initialize Express application
+const app = express() 
 
-const port = 8000; /* Create port to listen on */
-app.listen(port, () => console.log(`Server is running on port ${port}`))
+// Route handler for authentication routes
+app.use('/', require('./routes/authRoutes'));
+
+// Create port to listen on
+const port = 8000; 
+
+// Start the server and listen on the specified port
+app.listen(port, () => console.log(`Server is running on port ${port}`));

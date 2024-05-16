@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const cors = require('cors'); /* Enable web app to make requests to APIs on different domains - Middleware */
+const cors = require('cors'); // Import CORS for handling cross-origin requests
 const { test } = require('../controllers/authController');
 
-// Middleware
-
+// Middleware to enable CORS with specific configurations
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:5173'
+        origin: 'http://localhost:5173' // Allow requests from this origin
     })
-)
+);
 
-router.get('/', test)
+router.get('/', test);
 
-module.exports = router /* Export router for use when required by another part of the application */
+module.exports = router; // Export router for use when required by another part of the application 
