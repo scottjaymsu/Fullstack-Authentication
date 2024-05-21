@@ -22,8 +22,8 @@ export default function Login() {
   
   return (
     <div>
-      <form>
-        <label onSubmit={loginUser}>Email</label> {/* Form submission handler */}
+      <form onSubmit={loginUser}>
+        <label>Email</label> {/* Form submission handler */}
         <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />  {/* Input field for email with onChange event to update state */}
         <label>Password</label>
         <input type="password" placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} /> {/* Input field for password with onChange event to update state */}
