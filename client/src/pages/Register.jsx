@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 export default function Register() {
     // Initialize state and form data
@@ -9,8 +10,16 @@ export default function Register() {
   });
 
   // Function to handle registration form submission
-  const registerUser = (e) => {
-    a.preventDefault()
+  const registerUser = async (e) => {
+    a.preventDefault();
+    const {name, email, password} = data;
+    try {
+      const {data} = await axios.post('/register', {
+        name, email, password
+      })
+    } catch (error) {
+      
+    }
   }
   
   return (

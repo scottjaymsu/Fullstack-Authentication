@@ -2,14 +2,15 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 const { mongoose } = require('mongoose');
+const app = express();
 
 // Database connection
 mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log('Database Connected'))
 .catch((err) => console.log('Database NOT Connected', err));
 
-// Initialize Express application
-const app = express() 
+// Middleware
+app.use(express.json());
 
 // Route handler for authentication routes
 app.use('/', require('./routes/authRoutes'));
