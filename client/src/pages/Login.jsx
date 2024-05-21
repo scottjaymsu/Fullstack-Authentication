@@ -10,8 +10,14 @@ export default function Login() {
 
   // Function to handle login form submission
   const loginUser = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    axios.get('/'); // GET request to '/'
+    e.preventDefault(); 
+    axios.get('/')
+      .then(res => {
+        console.log(res.data); // Handle success response
+      })
+      .catch(error => {
+        console.error(error); // Handle error response
+      });
   };
   
   return (
